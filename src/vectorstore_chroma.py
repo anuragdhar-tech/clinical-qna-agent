@@ -1,3 +1,4 @@
+import os
 import chromadb
 import numpy as np
 from typing import List, Any
@@ -16,6 +17,9 @@ class ChromaVectorStore:
         print(f"[INFO] Loaded embedding model: {embedding_model}")
 
     def build_from_documents(self, documents: List[Any]):
+        print(f"[INFO] Dropping existing collection and rebuilding...")
+        self.client.delete_collection("vectorstore")
+        self.collection = self.client.get_or_create_collection("vectorstore")
         print(f"[INFO] Building vector store from {len(documents)} raw documents...")
         emb_pipe = EmbeddingPipeline(model_name=self.embedding_model, chunk_size=self.chunk_size, chunk_overlap=self.chunk_overlap)
         chunks = emb_pipe.chunk_documents(documents)
@@ -24,7 +28,7 @@ class ChromaVectorStore:
         # metadatas = [{"text": text} for text in texts]
         metadatas = [
             {
-                "source": chunk.metadata.get("source", "unknown"),
+                "source": os.path.basename(chunk.metadata.get("source", "unknown")),
                 "page": chunk.metadata.get("page", -1),
             }
             for chunk in chunks

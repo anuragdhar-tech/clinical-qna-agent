@@ -4,3 +4,4 @@ chroma_store/
 data/
 .env
 .DS_Store
+src/__pycache__/
