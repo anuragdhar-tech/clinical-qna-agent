@@ -3,3 +3,4 @@ faiss_store/
 chroma_store/
 data/
 .env
+.DS_Store

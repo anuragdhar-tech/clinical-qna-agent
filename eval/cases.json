@@ -1,0 +1,199 @@
+[
+  {
+    "id": "OA-01",
+    "category": "on_topic_answerable",
+    "query": "What is tuberculosis caused by?",
+    "expected_in_scope": true,
+    "expected_keywords": ["Mycobacterium tuberculosis", "inhalation"]
+  },
+  {
+    "id": "OA-02",
+    "category": "on_topic_answerable",
+    "query": "What are the two stages of TB infection?",
+    "expected_in_scope": true,
+    "expected_keywords": ["latent", "active"]
+  },
+  {
+    "id": "OA-03",
+    "category": "on_topic_answerable",
+    "query": "What is MDR-TB?",
+    "expected_in_scope": true,
+    "expected_keywords": ["resistant", "rifampicin"]
+  },
+  {
+    "id": "OA-04",
+    "category": "on_topic_answerable",
+    "query": "How many people globally have diabetes?",
+    "expected_in_scope": true,
+    "expected_keywords": ["346 million"]
+  },
+  {
+    "id": "OA-05",
+    "category": "on_topic_answerable",
+    "query": "How does diabetes increase TB risk?",
+    "expected_in_scope": true,
+    "expected_keywords": ["three times", "risk"]
+  },
+  {
+    "id": "OA-06",
+    "category": "on_topic_answerable",
+    "query": "What causes pneumonia?",
+    "expected_in_scope": true,
+    "expected_keywords": ["bacteria", "virus", "fungi"]
+  },
+  {
+    "id": "OA-07",
+    "category": "on_topic_answerable",
+    "query": "What are the symptoms of pneumonia?",
+    "expected_in_scope": true,
+    "expected_keywords": ["cough", "fever"]
+  },
+  {
+    "id": "OA-08",
+    "category": "on_topic_answerable",
+    "query": "What is cholera?",
+    "expected_in_scope": true,
+    "expected_keywords": ["cholera"]
+  },
+  {
+    "id": "OA-09",
+    "category": "on_topic_answerable",
+    "query": "What is XDR-TB?",
+    "expected_in_scope": true,
+    "expected_keywords": ["fluoroquinolone", "bedaquiline", "linezolid"]
+  },
+  {
+    "id": "OA-10",
+    "category": "on_topic_answerable",
+    "query": "What infection prevention measures are recommended for TB in healthcare settings?",
+    "expected_in_scope": true,
+    "expected_keywords": ["infection", "prevention", "control"]
+  },
+
+
+  {
+    "id": "ND-01",
+    "category": "on_topic_not_in_docs",
+    "query": "What is the recommended dosage of metformin for type 2 diabetes?",
+    "expected_in_scope": true,
+    "expected_answer_contains_not_found": true
+  },
+  {
+    "id": "ND-02",
+    "category": "on_topic_not_in_docs",
+    "query": "What are the WHO guidelines for malaria treatment?",
+    "expected_in_scope": true,
+    "expected_answer_contains_not_found": true
+  },
+  {
+    "id": "ND-03",
+    "category": "on_topic_not_in_docs",
+    "query": "What is the treatment protocol for dengue fever?",
+    "expected_in_scope": true,
+    "expected_answer_contains_not_found": true
+  },
+  {
+    "id": "ND-04",
+    "category": "on_topic_not_in_docs",
+    "query": "What are the screening recommendations for colorectal cancer?",
+    "expected_in_scope": true,
+    "expected_answer_contains_not_found": true
+  },
+  {
+    "id": "ND-05",
+    "category": "on_topic_not_in_docs",
+    "query": "What vaccines are recommended for hepatitis B?",
+    "expected_in_scope": true,
+    "expected_answer_contains_not_found": true
+  },
+
+
+  {
+    "id": "OS-01",
+    "category": "out_of_scope",
+    "query": "What is the best diet for losing weight?",
+    "expected_in_scope": false
+  },
+  {
+    "id": "OS-02",
+    "category": "out_of_scope",
+    "query": "Can you recommend a good hospital near me?",
+    "expected_in_scope": false
+  },
+  {
+    "id": "OS-03",
+    "category": "out_of_scope",
+    "query": "What is the stock price of Pfizer?",
+    "expected_in_scope": false
+  },
+  {
+    "id": "OS-04",
+    "category": "out_of_scope",
+    "query": "Write me a Python script to sort a list",
+    "expected_in_scope": false
+  },
+  {
+    "id": "OS-05",
+    "category": "out_of_scope",
+    "query": "What is the weather in New York today?",
+    "expected_in_scope": false
+  },
+
+  {
+    "id": "AM-01",
+    "category": "ambiguous",
+    "query": "What is the treatment?",
+    "expected_in_scope": true,
+    "expected_no_hallucination": true
+  },
+  {
+    "id": "AM-02",
+    "category": "ambiguous",
+    "query": "How long does it take?",
+    "expected_in_scope": false
+  },
+  {
+    "id": "AM-03",
+    "category": "ambiguous",
+    "query": "What are the symptoms?",
+    "expected_in_scope": true,
+    "expected_no_hallucination": true
+  },
+  {
+    "id": "AM-04",
+    "category": "ambiguous",
+    "query": "Is it contagious?",
+    "expected_in_scope": true,
+    "expected_no_hallucination": true
+  },
+  {
+    "id": "AM-05",
+    "category": "ambiguous",
+    "query": "What does the guideline say?",
+    "expected_in_scope": true,
+    "expected_no_hallucination": true
+  },
+
+
+  {
+    "id": "CD-01",
+    "category": "cross_doc",
+    "query": "How does diabetes affect tuberculosis outcomes?",
+    "expected_in_scope": true,
+    "expected_sources": ["TheUnion_DMTB_Guide.pdf", "diabetes.pdf"]
+  },
+  {
+    "id": "CD-02",
+    "category": "cross_doc",
+    "query": "What are the risk factors for developing active TB disease?",
+    "expected_in_scope": true,
+    "expected_sources": ["TheUnion_DMTB_Guide.pdf", "9789240111967-eng.pdf"]
+  },
+  {
+    "id": "CD-03",
+    "category": "cross_doc",
+    "query": "What respiratory infections are associated with airborne transmission?",
+    "expected_in_scope": true,
+    "expected_sources": ["TheUnion_DMTB_Guide.pdf", "what_is_pneumonia.pdf"]
+  }
+]

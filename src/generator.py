@@ -18,14 +18,20 @@ Rules:
 - Only use information present in the provided chunks.
 - If the answer is not found in the chunks, say so explicitly — do not invent information.
 - Always cite the source document and page number for every claim.
-- Do not provide personal medical advice or diagnosis."""
+- Do not provide personal medical advice or diagnosis.
+- If the retrieved excerpts do not contain information relevant to the question, you MUST state: 'The provided documents do not contain information about this topic.' Do not answer from general knowledge.
+"""
 
 #Scope gate runs before touching the LLM — cheap keyword check that short-circuits the whole chain for off-topic queries.
 SCOPE_KEYWORDS = [
     "diagnosis", "treatment", "dosage", "screening", "guideline",
     "symptom", "medication", "protocol", "prevention", "management",
     "therapy", "vaccine", "immunization", "dose", "drug", "disease",
-    "condition", "patient", "clinical", "health", "medical"
+    "condition", "patient", "clinical", "health", "medical",
+    "cause", "infection", "risk", "transmission", "pathogen",
+    "bacteria", "virus", "chronic", "acute", "test",
+    "tb", "tuberculosis", "diabetes", "hiv", "hypertension",
+    "cholera", "pneumonia", "stroke", "hypertension", "outbreak", "pneumococcal"
 ]
 
 def is_in_scope(query: str) -> tuple[bool, str | None]:
